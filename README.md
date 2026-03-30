@@ -98,3 +98,36 @@ This project compares star schema and snowflake schema using a warehouse analyti
 - year
 - month
 - day
+
+## Star Schema vs Snowflake Schema
+
+| Aspect | Star Schema | Snowflake Schema |
+|--------|-------------|------------------|
+| Structure | Denormalized dimensions | Normalized dimensions |
+| Query Performance | Faster for reporting | Slightly slower due to more joins |
+| Simplicity | Easier to understand | More complex |
+| Storage Redundancy | Higher | Lower |
+| Maintenance | Simpler for analysts | Better for structured data governance |
+| Best Use Case | BI dashboards and reporting | Complex enterprise data models |
+
+## Key Takeaway
+The star schema is more user-friendly and efficient for reporting and dashboarding, while the snowflake schema is more normalized and better suited for maintaining structured hierarchical data. In this project, both schemas support warehouse analytics, but they differ in simplicity, storage design, and query complexity.
+
+## Project Structure
+
+```text
+star-vs-snowflake-schema/
+│
+├── data/
+│   └── raw/
+│       └── raw_orders.csv
+│
+├── sql/
+│   ├── star_schema.sql
+│   ├── snowflake_schema.sql
+│   └── analysis_queries.sql
+│
+├── notebooks/
+├── diagrams/
+├── README.md
+└── requirements.txt
