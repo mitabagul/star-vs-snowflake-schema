@@ -1,0 +1,5 @@
+# This project focuses on SQL-based data modeling and does not require Python dependencies.
+
+pandas
+numpy
+matplotlib
