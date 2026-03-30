@@ -1,120 +1,94 @@
-# Star vs Snowflake Schema
+# ⭐ Star vs Snowflake Schema – Data Modeling Project
 
-## Project Goal
-This project compares star schema and snowflake schema using a warehouse analytics business case. The goal is to show how raw operational data can be structured into analytics-ready models for reporting and decision-making.
+## 📌 Overview
+This project demonstrates dimensional data modeling using Star Schema and Snowflake Schema for a warehouse analytics use case.
 
-## Scope
-- Design a star schema
-- Design a snowflake schema
-- Create SQL table definitions
-- Run analysis queries on top of both models
-- Compare simplicity, normalization, and reporting usability
+The goal is to transform raw, denormalized operational data into structured, analytics-ready models that support efficient business reporting and decision-making.
 
-## Star Schema Design
+---
 
-### Fact Table
-**fact_orders**
-- order_id
-- order_date
-- customer_id
-- product_id
-- warehouse_id
-- ship_date
-- delivery_date
-- shipping_cost
-- units
-- order_value
+## 🎯 Business Problem
+Organizations often store data in raw, denormalized formats, making it difficult to perform efficient analytics.
 
-### Dimension Tables
-**dim_customer**
-- customer_id
-- customer_name
-- city
-- region
+This project answers:
+How can we structure warehouse and order data to enable fast, scalable, and meaningful analysis?
 
-**dim_product**
-- product_id
-- product_name
-- category
+---
 
-**dim_warehouse**
-- warehouse_id
-- warehouse_city
-- warehouse_region
+## 🧠 Objective
+- Design a Star Schema for fast analytical querying
+- Design a Snowflake Schema for normalized data modeling
+- Compare both approaches based on performance, complexity, and usability
+- Run business queries to extract insights
 
-**dim_date**
-- date_id
-- full_date
-- year
-- month
-- day
+---
 
-## Snowflake Schema Design
+## 🏗️ Data Model Diagrams
 
-### Fact Table
-**fact_orders**
-- order_id
-- order_date
-- customer_id
-- product_id
-- warehouse_id
-- ship_date
-- delivery_date
-- shipping_cost
-- units
-- order_value
+Diagrams were created using dbdiagram.io for clear visualization of schema relationships.
 
-### Dimension Tables
-**dim_customer**
-- customer_id
-- customer_name
-- city_id
+### ⭐ Star Schema
+![Star Schema](diagrams/star_schema.png)
 
-**dim_product**
-- product_id
-- product_name
-- category_id
+### ❄️ Snowflake Schema
+![Snowflake Schema](diagrams/snowflake_schema.png)
 
-**dim_warehouse**
-- warehouse_id
-- warehouse_city_id
+---
 
-**dim_city**
-- city_id
-- city_name
-- region_id
+## 🧱 Data Modeling Approach
 
-**dim_region**
-- region_id
-- region_name
+### ⭐ Star Schema
+- Central fact table connected to denormalized dimension tables
+- Optimized for fast querying and reporting
 
-**dim_category**
-- category_id
-- category_name
+### ❄️ Snowflake Schema
+- Normalized dimension tables
+- Reduced redundancy and improved data integrity
+- Requires more joins for querying
 
-**dim_date**
-- date_id
-- full_date
-- year
-- month
-- day
+---
 
-## Star Schema vs Snowflake Schema
+## 📊 Key Business Queries
+
+Examples of analysis performed:
+
+- Revenue by warehouse
+- Product performance (units sold)
+- Regional revenue trends
+- Average shipping cost
+- Delivery time analysis
+
+---
+
+## ⚖️ Star vs Snowflake Comparison
 
 | Aspect | Star Schema | Snowflake Schema |
 |--------|-------------|------------------|
-| Structure | Denormalized dimensions | Normalized dimensions |
-| Query Performance | Faster for reporting | Slightly slower due to more joins |
-| Simplicity | Easier to understand | More complex |
-| Storage Redundancy | Higher | Lower |
-| Maintenance | Simpler for analysts | Better for structured data governance |
-| Best Use Case | BI dashboards and reporting | Complex enterprise data models |
+| Structure | Denormalized | Normalized |
+| Query Speed | Faster | Slightly slower |
+| Complexity | Simple | Complex |
+| Storage | Higher redundancy | Optimized |
+| Use Case | BI dashboards | Enterprise data models |
 
-## Key Takeaway
-The star schema is more user-friendly and efficient for reporting and dashboarding, while the snowflake schema is more normalized and better suited for maintaining structured hierarchical data. In this project, both schemas support warehouse analytics, but they differ in simplicity, storage design, and query complexity.
+---
 
-```markdown
-## Project Structure
+## 💡 Key Takeaways
+- Star schema simplifies querying and improves performance for analytics
+- Snowflake schema improves data integrity and reduces redundancy
+- The choice depends on business needs: speed vs structure
+
+---
+
+## 🛠️ Tech Stack
+- SQL
+- Data Modeling
+- Dimensional Modeling
+- dbdiagram.io
+- Git & GitHub
+
+---
+
+## 📁 Project Structure
 
 ```text
 star-vs-snowflake-schema/
@@ -132,4 +106,5 @@ star-vs-snowflake-schema/
 ├── diagrams/
 ├── README.md
 └── requirements.txt
+```
 
